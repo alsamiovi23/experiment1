@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+  if (localStorage.getItem("theme") !== "light") {
+    document.documentElement.classList.add("dark");
+  }
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Archive — Al-Sami Ovi</title>
+
+  <meta
+    name="description"
+    content="A central archive of Al-Sami Ovi's work, research, debate, and other interests."
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body data-page="archive">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <div class="container header-inner">
+
+      <div class="logo" id="logo">
+        AL-SAMI OVI
+        <small>@ovi</small>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-nav">
+        <a href="index.html" data-page="home">home</a>
+        <a href="about.html" data-page="about">about</a>
+        <a href="archive.html" data-page="archive">archive</a>
+        <a href="projects.html" data-page="projects">projects</a>
+        <a href="library.html" data-page="library">library</a>
+        <a href="now.html" data-page="now">now</a>
+        <a href="lab.html" data-page="lab">lab</a>
+        <a href="contact.html" data-page="contact">contact</a>
+        <button
+      class="theme-toggle"
+      id="theme-toggle"
+      type="button"
+      aria-label="Switch to light mode"
+      title="Switch theme"
+    >
+      <span id="theme-icon">☀️</span>
+    </button>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main id="main">
+
+    <section class="page-header container">
+      <div class="section-label">archive</div>
+      <h1 class="section-title">Ovi's archive.</h1>
+      <p class="page-intro">
+        A collection of things I've done, learned, built,
+        researched, judged, argued about, or otherwise become
+        unnecessarily invested in. Click a row for details.
+      </p>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <div class="archive reveal">
+
+          <div class="archive-header">
+            <span>OVI / ARCHIVE</span>
+            <span>8 FILES</span>
+          </div>
+
+          <button type="button" class="archive-item"
+                  data-title="Debate"
+                  data-content="Debate competitions, arguments, judging experiences, speeches, and things I've learned about constructing and destroying arguments."
+                  data-link="debate.html"
+                  data-link-label="visit the debate page →">
+            <span class="archive-number">001</span>
+            <span class="archive-name">DEBATE</span>
+            <span class="archive-arrow">→</span>
+          </button>
+
+          <button type="button" class="archive-item"
+                  data-title="Research"
+                  data-content="Academic research, research methodology, interesting questions, papers, investigations, and rabbit holes worth documenting."
+                  data-link="research.html"
+                  data-link-label="visit the research page →">
+            <span class="archive-number">002</span>
+            <span class="archive-name">RESEARCH</span>
+            <span class="archive-arrow">→</span>
+          </button>
+
+          <button type="button" class="archive-item"
+                  data-title="OSINT"
+                  data-content="Open-source intelligence, digital investigation, search techniques, metadata, digital footprints, and ethical investigative methodology."
+                  data-link="osint.html"
+                  data-link-label="visit the OSINT page →">
+            <span class="archive-number">003</span>
+            <span class="archive-name">OSINT</span>
+            <span class="archive-arrow">→</span>
+          </button>
+
+          <button type="button" class="archive-item"
+                  data-title="Competitions"
+                  data-content="Olympiads, academic competitions, national events, quizzes, and the various situations where I apparently decided competition was a good hobby."
+                  data-link="debate.html"
+                  data-link-label="more on the debate page →">
+            <span class="archive-number">004</span>
+            <span class="archive-name">COMPETITIONS</span>
+            <span class="archive-arrow">→</span>
+          </button>
+
+          <button type="button" class="archive-item"
+                  data-title="Projects"
+                  data-content="Things I've built or am currently building. Some serious. Some experimental. Some exist primarily because I wondered if I could make them."
+                  data-link="projects.html"
+                  data-link-label="visit the projects page →">
+            <span class="archive-number">005</span>
+            <span class="archive-name">PROJECTS</span>
+            <span class="archive-arrow">→</span>
+          </button>
+
+          <button type="button" class="archive-item"
+                  data-title="Writing"
+                  data-content="Essays, notes, thoughts, reviews, observations, and other attempts to turn the chaos in my head into coherent sentences."
+                  data-link="about.html#philosophy"
+                  data-link-label="see what I've written so far →">
+            <span class="archive-number">006</span>
+            <span class="archive-name">WRITING</span>
+            <span class="archive-arrow">→</span>
+          </button>
+
+          <button type="button" class="archive-item"
+                  data-title="Programming"
+                  data-content="Programming experiments and small projects while I learn how to actually build things instead of merely understanding how they work."
+                  data-link="projects.html"
+                  data-link-label="visit the projects page →">
+            <span class="archive-number">007</span>
+            <span class="archive-name">PROGRAMMING</span>
+            <span class="archive-arrow">→</span>
+          </button>
+
+          <button type="button" class="archive-item"
+                  data-title="Random Experiments"
+                  data-content="The miscellaneous folder. Things that don't fit anywhere else. Probably the most interesting folder."
+                  data-link="random.html"
+                  data-link-label="visit the random page →">
+            <span class="archive-number">008</span>
+            <span class="archive-name">RANDOM EXPERIMENTS</span>
+            <span class="archive-arrow">→</span>
+          </button>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       MODAL
+       ======================================================= -->
+
+  <div class="modal" id="modal">
+    <div class="modal-box">
+
+      <button class="modal-close" id="modal-close">
+        [ close ]
+      </button>
+
+      <h2 id="modal-title">Archive</h2>
+
+      <p id="modal-content">Content.</p>
+
+      <a class="modal-link" id="modal-link" href="#" style="display: none;">
+        visit page →
+      </a>
+
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="container footer-inner">
+      <div>AL-SAMI OVI © <span id="year"></span></div>
+      <div>site status: <span class="accent">ONLINE</span></div>
+      <div>press <span class="accent">?</span> for shortcuts</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

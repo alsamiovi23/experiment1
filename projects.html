@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+  if (localStorage.getItem("theme") !== "light") {
+    document.documentElement.classList.add("dark");
+  }
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Projects — Al-Sami Ovi</title>
+
+  <meta
+    name="description"
+    content="Things Al-Sami Ovi has built, is building, or gave up on halfway through."
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body data-page="projects">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <div class="container header-inner">
+
+      <div class="logo" id="logo">
+        AL-SAMI OVI
+        <small>@ovi</small>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-nav">
+        <a href="index.html" data-page="home">home</a>
+        <a href="about.html" data-page="about">about</a>
+        <a href="archive.html" data-page="archive">archive</a>
+        <a href="projects.html" data-page="projects">projects</a>
+        <a href="library.html" data-page="library">library</a>
+        <a href="now.html" data-page="now">now</a>
+        <a href="lab.html" data-page="lab">lab</a>
+        <a href="contact.html" data-page="contact">contact</a>
+        <button
+      class="theme-toggle"
+      id="theme-toggle"
+      type="button"
+      aria-label="Switch to light mode"
+      title="Switch theme"
+    >
+      <span id="theme-icon">☀️</span>
+    </button>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main id="main">
+
+    <section class="page-header container">
+      <div class="section-label">projects</div>
+      <h1 class="section-title">Projects.</h1>
+      <p class="page-intro">
+        Things I've built or am currently building. Some serious.
+        Some experimental. Some exist primarily because I wondered
+        if I could make them.
+      </p>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <div class="project-list">
+
+          <div class="project-card reveal">
+            <h3>This website</h3>
+            <span class="project-status">in progress</span>
+            <p>
+              A small multi-page personal site, built with plain
+              HTML, CSS, and vanilla JavaScript — no frameworks,
+              nothing fancy, just an ongoing home base for everything
+              else on here.
+            </p>
+          </div>
+
+          <div class="project-card reveal">
+            <h3>Debate motion generator</h3>
+            <span class="project-status">live</span>
+            <p>
+              Generates slightly ridiculous debate motions on demand.
+              Lives in the <a href="lab.html">lab</a>.
+            </p>
+          </div>
+
+          <div class="project-card reveal">
+            <h3>Random fact generator</h3>
+            <span class="project-status">live</span>
+            <p>
+              Press a button, learn something you probably didn't
+              need to know. Also in the <a href="lab.html">lab</a>.
+            </p>
+          </div>
+
+          <div class="project-card reveal">
+            <h3>Rabbit hole generator</h3>
+            <span class="project-status">live</span>
+            <p>
+              Picks a topic and sends you off to fall down a hole of
+              your own making. One more <a href="lab.html">lab</a> resident.
+            </p>
+          </div>
+
+        </div>
+
+        <p class="placeholder-note" style="margin-top: 40px;">
+          More projects will be added here as they're finished
+          (or abandoned).
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="container footer-inner">
+      <div>AL-SAMI OVI © <span id="year"></span></div>
+      <div>site status: <span class="accent">ONLINE</span></div>
+      <div>press <span class="accent">?</span> for shortcuts</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

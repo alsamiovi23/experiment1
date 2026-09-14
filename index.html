@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+  if (localStorage.getItem("theme") !== "light") {
+    document.documentElement.classList.add("dark");
+  }
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Al-Sami Ovi — A Little Corner of the Internet</title>
+
+  <meta
+    name="description"
+    content="The personal corner of the internet belonging to Al-Sami Ovi."
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body data-page="home">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- =======================================================
+       HEADER / NAV — identical on every page
+       ======================================================= -->
+
+  <header>
+    <div class="container header-inner">
+
+      <div class="logo" id="logo">
+        AL-SAMI OVI
+        <small>@ovi</small>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-nav">
+  <a href="index.html" data-page="home">home</a>
+  <a href="about.html" data-page="about">about</a>
+  <a href="archive.html" data-page="archive">archive</a>
+  <a href="projects.html" data-page="projects">projects</a>
+  <a href="library.html" data-page="library">library</a>
+  <a href="now.html" data-page="now">now</a>
+  <a href="lab.html" data-page="lab">lab</a>
+  <a href="contact.html" data-page="contact">contact</a>
+
+  <button
+    class="theme-toggle"
+    id="theme-toggle"
+    type="button"
+    aria-label="Switch to light mode"
+    title="Switch theme"
+  >
+    <span id="theme-icon">☀</span>
+  </button>
+</nav>
+
+    </div>
+  </header>
+
+
+  <main id="main">
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <section class="hero container">
+
+      <div class="reveal">
+
+        <div class="eyebrow">
+          // welcome to my little corner of the internet
+        </div>
+
+        <h1>
+          Ovi.
+        </h1>
+
+        <p class="hero-description">
+          I'm eighteen, based in Bangladesh, and still figuring out
+          exactly what I want to specialize in —
+          <em>which seems like a reasonable place to be.</em>
+        </p>
+
+        <div class="hero-links">
+
+          <a class="button accent-button" href="archive.html">
+            explore the archive →
+          </a>
+
+          <a class="button" href="about.html">
+            who is this guy?
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- TERMINAL -->
+
+      <div class="terminal reveal">
+
+        <div class="terminal-top">
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+        </div>
+
+        <div class="terminal-line">
+          ovi@internet:~$ whoami
+        </div>
+
+        <div class="terminal-output">
+          Al-Sami Ovi
+        </div>
+
+        <div class="terminal-line">
+          ovi@internet:~$ interests
+        </div>
+
+        <div class="terminal-output">
+          psychology<br>
+          research<br>
+          debate<br>
+          literature<br>
+          OSINT<br>
+          technology<br>
+          games<br>
+          films
+        </div>
+
+        <div class="terminal-line">
+          ovi@internet:~$ status
+        </div>
+
+        <div class="terminal-output">
+          figuring things out...
+        </div>
+
+        <div class="terminal-line">
+          ovi@internet:~$ <span class="cursor"></span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         WHO AM I (short version — full version on about.html)
+         ===================================================== -->
+
+    <section>
+      <div class="container">
+
+        <div class="section-label">001 / about</div>
+
+        <h2 class="section-title">Who is this guy?</h2>
+
+        <div class="about-grid">
+
+          <div class="about-text reveal">
+
+            <p>
+              I'm eighteen, based in Bangladesh, and still working out
+              exactly what I want to specialize in. So far, that
+              uncertainty has taken the shape of debate, research,
+              academic competitions, books, and random internet
+              rabbit holes.
+            </p>
+
+            <div class="link-row">
+              <a href="about.html">the full story →</a>
+            </div>
+
+          </div>
+
+          <div class="about-note reveal">
+
+            <h3>// things currently orbiting my brain</h3>
+
+            <ul>
+              <li>psychology</li>
+              <li>academic research</li>
+              <li>open-source intelligence</li>
+              <li>debate & argumentation</li>
+              <li>literature</li>
+              <li>technology</li>
+              <li>games & films</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         CURRENTLY (short version — full version on now.html)
+         ===================================================== -->
+
+    <section>
+      <div class="container">
+
+        <div class="section-label">002 / now</div>
+
+        <h2 class="section-title">Currently.</h2>
+
+        <div class="now-box reveal">
+
+          <div class="now-grid">
+
+            <div class="now-item">
+              <div class="now-label">studying</div>
+              <div class="now-value">varsity admission</div>
+            </div>
+
+            <div class="now-item">
+              <div class="now-label">building</div>
+              <div class="now-value">this website</div>
+            </div>
+
+            <div class="now-item">
+              <div class="now-label">reading</div>
+              <div class="now-value">1984</div>
+            </div>
+
+            <div class="now-item">
+              <div class="now-label">thinking about</div>
+              <div class="now-value">what I actually want to become</div>
+            </div>
+
+          </div>
+
+          <div class="link-row">
+            <a href="now.html">the full now page →</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         ARCHIVE PREVIEW (full archive lives on archive.html)
+         ===================================================== -->
+
+    <section>
+      <div class="container">
+
+        <div class="section-label">003 / archive</div>
+
+        <h2 class="section-title">A peek into the archive.</h2>
+
+        <p class="archive-intro">
+          A collection of things I've done, learned, built,
+          researched, judged, argued about, or otherwise become
+          unnecessarily invested in.
+        </p>
+
+        <div class="archive reveal">
+
+          <div class="archive-header">
+            <span>OVI / ARCHIVE</span>
+            <span>PREVIEW</span>
+          </div>
+
+          <a class="archive-item" href="debate.html">
+            <span class="archive-number">001</span>
+            <span class="archive-name">DEBATE</span>
+            <span class="archive-arrow">→</span>
+          </a>
+
+          <a class="archive-item" href="research.html">
+            <span class="archive-number">002</span>
+            <span class="archive-name">RESEARCH</span>
+            <span class="archive-arrow">→</span>
+          </a>
+
+          <a class="archive-item" href="osint.html">
+            <span class="archive-number">003</span>
+            <span class="archive-name">OSINT</span>
+            <span class="archive-arrow">→</span>
+          </a>
+
+        </div>
+
+        <a class="archive-preview-link" href="archive.html">
+          → view the full archive
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         WHERE TO GO FROM HERE
+         ===================================================== -->
+
+    <section>
+      <div class="container">
+
+        <div class="section-label">004 / explore</div>
+
+        <h2 class="section-title">Where to go from here.</h2>
+
+        <div class="lab-grid">
+
+          <div class="lab-card reveal">
+            <div>
+              <div class="lab-number">→</div>
+              <h3>Library</h3>
+              <p>Books, games, films, and whatever else I've been consuming.</p>
+            </div>
+            <a class="button" href="library.html">take a look →</a>
+          </div>
+
+          <div class="lab-card reveal">
+            <div>
+              <div class="lab-number">→</div>
+              <h3>Lab</h3>
+              <p>Small experiments and tools I built because I wondered if I could.</p>
+            </div>
+            <a class="button" href="lab.html">enter →</a>
+          </div>
+
+          <div class="lab-card reveal">
+            <div>
+              <div class="lab-number">→</div>
+              <h3>Projects</h3>
+              <p>Things I've built, am building, or gave up on halfway through.</p>
+            </div>
+            <a class="button" href="projects.html">see them →</a>
+          </div>
+
+          <div class="lab-card reveal">
+            <div>
+              <div class="lab-number">→</div>
+              <h3>Contact</h3>
+              <p>Say hi, or send me something interesting.</p>
+            </div>
+            <a class="button" href="contact.html">get in touch →</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER — identical on every page
+       ======================================================= -->
+
+  <footer>
+    <div class="container footer-inner">
+      <div>AL-SAMI OVI © <span id="year"></span></div>
+      <div>site status: <span class="accent">ONLINE</span></div>
+      <div>press <span class="accent">?</span> for shortcuts</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

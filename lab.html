@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+  if (localStorage.getItem("theme") !== "light") {
+    document.documentElement.classList.add("dark");
+  }
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Lab — Al-Sami Ovi</title>
+
+  <meta
+    name="description"
+    content="Small interactive experiments and tools by Al-Sami Ovi."
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body data-page="lab">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <div class="container header-inner">
+
+      <div class="logo" id="logo">
+        AL-SAMI OVI
+        <small>@ovi</small>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-nav">
+        <a href="index.html" data-page="home">home</a>
+        <a href="about.html" data-page="about">about</a>
+        <a href="archive.html" data-page="archive">archive</a>
+        <a href="projects.html" data-page="projects">projects</a>
+        <a href="library.html" data-page="library">library</a>
+        <a href="now.html" data-page="now">now</a>
+        <a href="lab.html" data-page="lab">lab</a>
+        <a href="contact.html" data-page="contact">contact</a>
+        <button
+      class="theme-toggle"
+      id="theme-toggle"
+      type="button"
+      aria-label="Switch to light mode"
+      title="Switch theme"
+    >
+      <span id="theme-icon">☀️</span>
+    </button>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main id="main">
+
+    <section class="page-header container">
+      <div class="section-label">laboratory</div>
+      <h1 class="section-title">The lab.</h1>
+      <p class="page-intro">
+        Small experiments. Tiny tools. Things I made because
+        I wondered whether I could.
+      </p>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <div class="lab-grid">
+
+          <!-- RANDOM FACT -->
+          <div class="lab-card reveal">
+            <div>
+              <div class="lab-number">LAB 001</div>
+              <h3>Useless knowledge</h3>
+              <p>
+                Press the button. Learn something you probably
+                didn't need to know.
+              </p>
+            </div>
+            <div>
+              <button class="button" id="fact-button">
+                give me something
+              </button>
+              <div id="fact-output"></div>
+            </div>
+          </div>
+
+          <!-- ARGUMENT GENERATOR -->
+          <div class="lab-card reveal">
+            <div>
+              <div class="lab-number">LAB 002</div>
+              <h3>Argument generator</h3>
+              <p>
+                For when you desperately need something
+                to argue about.
+              </p>
+            </div>
+            <div>
+              <button class="button" id="argument-button">
+                generate motion
+              </button>
+              <div id="argument-output"></div>
+            </div>
+          </div>
+
+          <!-- MOVIE QUIZ -->
+          <div class="lab-card reveal">
+            <div>
+              <div class="lab-number">LAB 003</div>
+              <h3>Movie quiz machine</h3>
+              <p>
+                A future home for unnecessarily obscure
+                movie trivia.
+              </p>
+            </div>
+            <button class="button" id="movie-quiz-button">
+              enter →
+            </button>
+          </div>
+
+          <!-- RABBIT HOLE -->
+          <div class="lab-card reveal">
+            <div>
+              <div class="lab-number">LAB 004</div>
+              <h3>Rabbit hole</h3>
+              <p>
+                Start with one topic. See where the internet
+                takes you.
+              </p>
+            </div>
+            <button class="button" id="rabbit-hole-button">
+              fall in →
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="container footer-inner">
+      <div>AL-SAMI OVI © <span id="year"></span></div>
+      <div>site status: <span class="accent">ONLINE</span></div>
+      <div>press <span class="accent">?</span> for shortcuts</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
