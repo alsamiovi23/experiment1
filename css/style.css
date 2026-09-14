@@ -1,0 +1,1254 @@
+/* =========================================================
+   OVI'S PERSONAL WEBSITE — SHARED STYLESHEET
+   This file is loaded by every page. Variables live at the
+   top so the whole site's look can be changed from one place.
+   ========================================================= */
+
+
+/* -------------------------
+   1. VARIABLES
+   ------------------------- */
+
+:root {
+  --paper: #f4f0e8;
+  --paper-dark: #e9e3d7;
+  --ink: #171717;
+  --muted: #68645c;
+  --line: #bdb6a8;
+  --accent: #9c3f35;
+  --accent-light: #ead4d0;
+
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Arial, Helvetica, sans-serif;
+  --mono: "Courier New", Courier, monospace;
+
+  --max-width: 1100px;
+}
+
+
+/* -------------------------
+   2. RESET
+   ------------------------- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* -------------------------
+   3. PAPER TEXTURE
+   ------------------------- */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  z-index: 9999;
+
+  background-image:
+    radial-gradient(#000 0.6px, transparent 0.6px);
+
+  background-size: 5px 5px;
+}
+
+
+/* -------------------------
+   4. GLOBAL
+   ------------------------- */
+
+.container {
+  width: min(92%, var(--max-width));
+  margin: auto;
+}
+
+.mono {
+  font-family: var(--mono);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.tiny {
+  font-size: 0.75rem;
+}
+
+/* Skip link, for keyboard / screen-reader users */
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 10px 16px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+}
+
+/* Visible focus states everywhere (accessibility) */
+
+a:focus-visible,
+button:focus-visible,
+.map-node:focus-visible,
+.archive-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Tasteful placeholder for sections that don't have content yet */
+
+.placeholder-note {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--muted);
+  border-left: 2px dotted var(--line);
+  padding-left: 20px;
+}
+
+
+/* -------------------------
+   5. HEADER
+   ------------------------- */
+
+header {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  background: rgba(244, 240, 232, 0.94);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.logo small {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+  font-weight: normal;
+  margin-left: 6px;
+}
+
+/* Hamburger button — hidden on desktop, shown on mobile */
+
+.nav-toggle {
+  display: none;
+  border: 1px solid var(--ink);
+  background: transparent;
+  width: 38px;
+  height: 34px;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--ink);
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+nav a {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  position: relative;
+  padding: 4px 0;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.2s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+nav a.active {
+  color: var(--accent);
+}
+
+
+/* -------------------------
+   6. HERO (homepage only)
+   ------------------------- */
+
+.hero {
+  min-height: 78vh;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 70px;
+  padding: 80px 0;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  line-height: 0.88;
+  letter-spacing: -0.06em;
+  margin-bottom: 30px;
+}
+
+.hero-description {
+  max-width: 600px;
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.5;
+}
+
+.hero-description em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.hero-links {
+  margin-top: 35px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.button {
+  border: 1px solid var(--ink);
+  padding: 10px 17px;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.button:hover {
+  background: var(--ink);
+  color: var(--paper);
+  transform: translateY(-2px);
+}
+
+.button.accent-button {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.button.accent-button:hover {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+
+/* -------------------------
+   7. TERMINAL
+   ------------------------- */
+
+.terminal {
+  background: #1b1b1b;
+  color: #eee;
+  padding: 20px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  box-shadow: 12px 12px 0 var(--paper-dark);
+  transform: rotate(1deg);
+}
+
+.terminal-top {
+  display: flex;
+  gap: 6px;
+  border-bottom: 1px solid #555;
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+}
+
+.terminal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #777;
+}
+
+.terminal-line {
+  margin: 8px 0;
+}
+
+.terminal-output {
+  color: #bbb;
+  padding-left: 14px;
+  margin-bottom: 14px;
+}
+
+.cursor {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  background: #eee;
+  animation: blink 1s infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+/* -------------------------
+   8. SECTION BASICS
+   ------------------------- */
+
+section {
+  padding: 110px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-label {
+  font-family: var(--mono);
+  color: var(--accent);
+  font-size: 0.7rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  line-height: 1;
+  margin-bottom: 30px;
+}
+
+/* Page header — used at the top of every sub-page instead of
+   the big two-column homepage hero */
+
+.page-header {
+  padding: 70px 0 60px;
+  border-top: none;
+}
+
+.page-header .section-title {
+  margin-bottom: 18px;
+}
+
+.page-intro {
+  max-width: 650px;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+}
+
+
+/* -------------------------
+   9. ABOUT
+   ------------------------- */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+}
+
+.about-text {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.about-text p + p {
+  margin-top: 20px;
+}
+
+.about-note {
+  border-left: 2px solid var(--accent);
+  padding-left: 25px;
+  align-self: start;
+}
+
+.about-note h3 {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  margin-bottom: 15px;
+}
+
+.about-note ul {
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+.about-note li {
+  margin: 9px 0;
+}
+
+.about-note li::before {
+  content: "→ ";
+  color: var(--accent);
+}
+
+.link-row {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  margin-top: 14px;
+}
+
+.link-row a {
+  border-bottom: 1px solid var(--line);
+}
+
+.link-row a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+
+/* -------------------------
+   10. CURRENTLY / NOW
+   ------------------------- */
+
+.now-box {
+  border: 1px solid var(--ink);
+  padding: 30px;
+  position: relative;
+}
+
+.now-box::before {
+  content: "LIVE";
+  position: absolute;
+  right: 15px;
+  top: -10px;
+  background: var(--paper);
+  padding: 0 8px;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--accent);
+}
+
+.now-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+
+.now-item {
+  padding: 20px 10px;
+  border-bottom: 1px dotted var(--line);
+}
+
+.now-item:nth-child(odd) {
+  padding-left: 0;
+  padding-right: 30px;
+  border-right: 1px dotted var(--line);
+}
+
+.now-item:nth-child(even) {
+  padding-left: 30px;
+}
+
+.now-label {
+  font-family: var(--mono);
+  color: var(--muted);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.now-value {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+
+
+/* -------------------------
+   11. ARCHIVE
+   ------------------------- */
+
+.archive-intro {
+  max-width: 650px;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  margin-bottom: 40px;
+}
+
+.archive {
+  border: 1px solid var(--ink);
+  font-family: var(--mono);
+}
+
+.archive-header {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+}
+
+.archive-item {
+  display: grid;
+  grid-template-columns: 70px 1fr 30px;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  padding: 20px 15px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  width: 100%;
+  background: none;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+  text-align: left;
+  font-family: var(--mono);
+  color: inherit;
+}
+
+.archive-item:hover {
+  background: var(--paper-dark);
+}
+
+.archive-number {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.archive-name {
+  font-size: 0.9rem;
+}
+
+.archive-arrow {
+  color: var(--accent);
+}
+
+/* Small archive preview used on the homepage */
+
+.archive-preview-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+
+/* -------------------------
+   12. INTEREST MAP
+   ------------------------- */
+
+.map-container {
+  position: relative;
+  min-height: 560px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 49.5%,
+      rgba(0,0,0,0.04) 50%,
+      transparent 50.5%
+    ),
+    linear-gradient(
+      transparent 49.5%,
+      rgba(0,0,0,0.04) 50%,
+      transparent 50.5%
+    );
+}
+
+.map-title {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+.map-node {
+  position: absolute;
+  appearance: none;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  color: inherit;
+  padding: 10px 15px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.map-node:hover,
+.map-node.active {
+  background: var(--ink);
+  color: var(--paper);
+  transform: scale(1.06);
+}
+
+.node-psychology {
+  left: 50%;
+  top: 12%;
+  transform: translateX(-50%);
+}
+
+.node-research {
+  left: 22%;
+  top: 32%;
+}
+
+.node-debate {
+  right: 20%;
+  top: 32%;
+}
+
+.node-literature {
+  left: 13%;
+  bottom: 24%;
+}
+
+.node-writing {
+  right: 10%;
+  bottom: 24%;
+}
+
+.node-osint {
+  left: 40%;
+  top: 38%;
+}
+
+.node-tech {
+  left: 43%;
+  bottom: 15%;
+}
+
+.node-games {
+  left: 20%;
+  bottom: 8%;
+}
+
+.node-films {
+  right: 21%;
+  bottom: 8%;
+}
+
+.map-info {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(90%, 430px);
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  padding: 18px;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 5;
+}
+
+.map-info.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.map-info-title {
+  color: var(--accent);
+  margin-bottom: 7px;
+}
+
+
+/* -------------------------
+   13. LIBRARY
+   ------------------------- */
+
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.library-card {
+  border: 1px solid var(--line);
+  padding: 22px;
+  min-height: 190px;
+  transition: transform 0.2s ease;
+}
+
+.library-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ink);
+}
+
+.library-type {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.library-title {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  margin: 20px 0 5px;
+}
+
+.library-author {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+.library-note {
+  font-size: 0.85rem;
+  margin-top: 20px;
+}
+
+
+/* -------------------------
+   14. LAB
+   ------------------------- */
+
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.lab-card {
+  border: 1px solid var(--ink);
+  padding: 25px;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lab-number {
+  font-family: var(--mono);
+  color: var(--accent);
+  font-size: 0.7rem;
+}
+
+.lab-card h3 {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  margin-top: 15px;
+}
+
+.lab-card p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 10px 0 20px;
+}
+
+#fact-output,
+#argument-output {
+  margin-top: 15px;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  min-height: 50px;
+}
+
+
+/* -------------------------
+   15. RANDOM
+   ------------------------- */
+
+.random-box {
+  max-width: 750px;
+  border-left: 3px solid var(--accent);
+  padding-left: 30px;
+}
+
+.random-box h3 {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.random-list {
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+.random-list li {
+  padding: 12px 0;
+  border-bottom: 1px dotted var(--line);
+}
+
+.random-list li::before {
+  content: "↳ ";
+  color: var(--accent);
+}
+
+
+/* -------------------------
+   16. GENERIC CONTENT PAGES
+   (debate / research / osint / projects)
+   ------------------------- */
+
+.content-block {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 700px;
+}
+
+.content-block p + p {
+  margin-top: 18px;
+}
+
+.content-block + .content-block {
+  margin-top: 45px;
+}
+
+.content-block h3 {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 60px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.back-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.project-list {
+  display: grid;
+  gap: 15px;
+}
+
+.project-card {
+  border: 1px solid var(--line);
+  padding: 22px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: start;
+}
+
+.project-card h3 {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+}
+
+.project-card p {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  grid-column: 1 / -1;
+}
+
+.project-status {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 3px 8px;
+  white-space: nowrap;
+  height: fit-content;
+}
+
+
+/* -------------------------
+   17. CONTACT
+   ------------------------- */
+
+.contact-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+}
+
+.contact-big {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1;
+}
+
+.contact-links {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+.contact-links a {
+  display: block;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-links a:hover {
+  color: var(--accent);
+}
+
+
+/* -------------------------
+   18. 404
+   ------------------------- */
+
+.error-page {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+.error-code {
+  font-family: var(--serif);
+  font-size: clamp(4rem, 14vw, 9rem);
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+}
+
+
+/* -------------------------
+   19. FOOTER
+   ------------------------- */
+
+footer {
+  border-top: 1px solid var(--ink);
+  padding: 30px 0;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+
+/* -------------------------
+   20. MODAL
+   ------------------------- */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 500;
+}
+
+.modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-box {
+  width: min(600px, 100%);
+  max-height: 80vh;
+  overflow-y: auto;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: 30px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+.modal h2 {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.modal p {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.modal-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+
+
+/* -------------------------
+   21. SCROLL REVEAL
+   ------------------------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* -------------------------
+   22. MOBILE
+   ------------------------- */
+
+@media (max-width: 800px) {
+
+  header {
+    position: relative;
+  }
+
+  .header-inner {
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding-top: 16px;
+    margin-top: 16px;
+    border-top: 1px dotted var(--line);
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav a {
+    padding: 8px 0;
+    width: 100%;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding: 70px 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.5rem, 18vw, 6rem);
+  }
+
+  .about-grid,
+  .contact-area {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .now-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .now-item:nth-child(odd),
+  .now-item:nth-child(even) {
+    padding-left: 0;
+    padding-right: 0;
+    border-right: 0;
+  }
+
+  .library-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .map-container {
+    min-height: 650px;
+  }
+
+  .node-psychology {
+    left: 50%;
+    top: 10%;
+  }
+
+  .node-research {
+    left: 7%;
+    top: 27%;
+  }
+
+  .node-debate {
+    right: 7%;
+    top: 27%;
+  }
+
+  .node-osint {
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+  }
+
+  .node-literature {
+    left: 5%;
+    bottom: 30%;
+  }
+
+  .node-writing {
+    right: 5%;
+    bottom: 30%;
+  }
+
+  .node-tech {
+    left: 50%;
+    bottom: 18%;
+    transform: translateX(-50%);
+  }
+
+  .node-games {
+    left: 8%;
+    bottom: 7%;
+  }
+
+  .node-films {
+    right: 8%;
+    bottom: 7%;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+  }
+}
+
+
+/* -------------------------
+   23. REDUCED MOTION
+   ------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
